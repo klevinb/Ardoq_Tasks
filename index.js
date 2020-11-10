@@ -3,20 +3,29 @@ Create a function that, given a list of integers, returns the highest product be
 For example, given the list [1, 10, 2, 6, 5, 3] the highest product would be 10 * 6 * 5 = 300
 */
 
-const arrayOfNumbers = [1, 10, 2, 6, 5, 3];
+const arrayOfNumbers = [1, 412, 5124, 13, 421, 412];
 
 const threeHighestNumbers = (array) => {
-  let max = -999,
-    maxNumbers = [];
-
-  for (let i = 0; i < array.length; i++) {
-    if (max < array[i]) {
-      max = array[i];
+  const sortedArray = arrayOfNumbers.sort(function (a, b) {
+    if (a > b) {
+      return 1;
+    } else if (a == b) {
+      return 0;
+    } else {
+      return -1;
     }
-    const newArray = arrayOfNumbers.filter((nr) => nr !== max);
-    console.log(newArray);
+  });
+  console.log(sortedArray);
+
+  let highestP = 1;
+  for (let i = sortedArray.length - 1; i > 0; i--) {
+    highestP *= sortedArray[i];
+    if (i === sortedArray.length - 3) {
+      break;
+    }
   }
-  console.log(max);
+  return highestP;
 };
 
-threeHighestNumbers(arrayOfNumbers);
+// threeHighestNumbers(arrayOfNumbers);
+console.log('Result ', threeHighestNumbers(arrayOfNumbers));
