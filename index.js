@@ -3,7 +3,7 @@ Create a function that, given a list of integers, returns the highest product be
 For example, given the list [1, 10, 2, 6, 5, 3] the highest product would be 10 * 6 * 5 = 300
 */
 
-const arrayOfNumbers = [1, 412, 5124, 13, 421, 412];
+const arrayOfNumbers = [1, 10, 2, 6, 5, 3];
 
 const threeHighestNumbers = (array) => {
   const sortedArray = arrayOfNumbers.sort(function (a, b) {
@@ -27,5 +27,27 @@ const threeHighestNumbers = (array) => {
   return highestP;
 };
 
+const anotherWay = (array) => {
+  let firstNumber = -999,
+    secondNumber = -999,
+    thirdNumber = -999,
+    i;
+
+  for (i = 0; i < array.length; i++) {
+    if (array[i] > firstNumber) {
+      thirdNumber = secondNumber;
+      secondNumber = firstNumber;
+      firstNumber = array[i];
+    } else if (array[i] > secondNumber) {
+      thirdNumber = secondNumber;
+      secondNumber = array[i];
+    } else if (array[i] > thirdNumber) {
+      thirdNumber = array[i];
+    }
+  }
+  console.log(firstNumber * secondNumber * thirdNumber);
+};
+
 // threeHighestNumbers(arrayOfNumbers);
-console.log('Result ', threeHighestNumbers(arrayOfNumbers));
+// console.log('Result ', threeHighestNumbers(arrayOfNumbers));
+anotherWay(arrayOfNumbers);
