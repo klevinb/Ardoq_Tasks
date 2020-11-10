@@ -1,0 +1,34 @@
+.App {
+  height: 100vh;
+  margin: 0;
+  background-image: linear-gradient(135deg, #3b2667 10%, #4f0088 100%);
+}
+.App .row {
+  height: 100%;
+  width: 100%;
+}
+.App .row h2 {
+  color: whitesmoke;
+}
+
+.modal-body svg {
+  font-size: 20px !important;
+}
+
+.appInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+.appInfo p {
+  font-size: large;
+  color: whitesmoke;
+  padding-top: 20px;
+}
+.appInfo a {
+  color: lightgray;
+}
+.appInfo a:hover {
+  text-decoration: none;
+  color: lightblue;
+}
