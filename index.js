@@ -48,6 +48,5 @@ const anotherWay = (array) => {
   console.log(firstNumber * secondNumber * thirdNumber);
 };
 
-// threeHighestNumbers(arrayOfNumbers);
-// console.log('Result ', threeHighestNumbers(arrayOfNumbers));
+console.log('Result ', threeHighestNumbers(arrayOfNumbers));
 anotherWay(arrayOfNumbers);
